@@ -25,11 +25,17 @@ from home.views import *
 
 
 urlpatterns = [
-    path('', home, name="home"),
+  
+    path('about/', about, name="about"),
+    path('contact/', contact, name="contact"),
+    path('', login1, name="login"),
     path('admin/', admin.site.urls),
     path('login/', login1, name="login"),
     path('home/', home, name="home"),
-    path('register/',register, name="register")
+    path('register/', register, name="register"),
+    path('test/', test, name="test"),
+    path('cart/', cart, name="cart")
+   
 ]
 
 

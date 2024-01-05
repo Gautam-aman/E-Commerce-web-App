@@ -1,10 +1,25 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+
     <style>
+
+      #menu-bar{
+        font-size: 2.5rem;
+        padding: .5rem 1.5rem;
+        border:.1rem solid var(--black);
+        color:var(--black);
+        border-radius: .3rem;
+        cursor: pointer;
+        display: none;
+      }
 
         .container {
         width: 500px;
@@ -31,5 +46,7 @@
     {% block content%}
 
     {% endblock %}
+
+    <script src="{% static "js/main1.js" %}"></script>
    </body>
 </html>
