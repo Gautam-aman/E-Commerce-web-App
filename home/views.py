@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Person
+from .models import *
 from django.contrib.auth.models import User
 from django.http import HttpRequest, HttpResponse
 from django.contrib import messages
@@ -73,25 +73,18 @@ def cart(request):
     return render(request, "home/templates/cart.html")
 
 
-def Ccontact(request):
+def send_email(request):
     if request.method=="POST":
-        data= request.POST
-        fname= data.get('Cname')
-        fmail=data.get('Cemail')
+        data = request.POST
+        Cname= data.get('Cname')
+        Email= data.get('Cemail')
         desc= data.get('Cmessage')
         
-        query= contact(name=fname, email=fmail,
-                     description=desc)
-        query.save()
-        from_email=settings.EMAIL_HOST_USER
-        connection=mail.get.connection()
-        connection.open()
-        email_message=mail.EmailMessage(f'Email from {fname}' , f'UserEmail: {fmail}, query:{desc}', from_email,['rigel2128@gmail.com'],
-                                        connection=connection)
-        connection.send_message([email_message])
-        connection.close()
-        return redirect("/contact/")
-    return render(request, "home/templates/contact.html")
+        from_email= settings.EMAIL_HOST_USER
+        recipient_list=['fakehai568@gmail.com']
+        send_mail(Cname,desc,from_email,recipient_list)
+        return redirect('/contact/')
+    return render('/home/')
         
         
         
