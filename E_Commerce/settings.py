@@ -34,6 +34,7 @@ EXTERNAL_APPS=[
 ]
 
 INSTALLED_APPS = [
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += EXTERNAL_APPS
 
 MIDDLEWARE = [
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -141,3 +143,4 @@ EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER="fakehai568@gmail.com"
 EMAIL_HOST_PASSWORD="Aman@2426"
+PASSWORD_RESET_TIMEOUT=14400
